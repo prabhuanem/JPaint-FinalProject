@@ -33,12 +33,14 @@ public class ShapeCreate implements IEventCallback, IUndoable {
 
     @Override
     public void undo() {
-
+        AllShape.allShape.remove(shape);
+        paintCanvas.repaint();
     }
 
     @Override
-    public void redo() {
-
-
+    public void redo()
+    {
+        AllShape.allShape.add(shape);
+        paintCanvas.repaint();
     }
 }
