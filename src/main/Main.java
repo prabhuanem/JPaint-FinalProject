@@ -15,10 +15,8 @@ public class Main {
         PaintCanvas paintCanvas = new PaintCanvas();
         IGuiWindow guiWindow = new GuiWindow(paintCanvas);
         IUiModule uiModule = new Gui(guiWindow);
-
         ApplicationState appState = new ApplicationState(uiModule);
         IJPaintController controller = new JPaintController(uiModule, appState);
-
         controller.setup();
         MouseTracking mouseAdapter = new MouseTracking(paintCanvas, appState);
         paintCanvas.addMouseListener(mouseAdapter);
