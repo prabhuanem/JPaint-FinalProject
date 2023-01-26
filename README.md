@@ -41,6 +41,6 @@ Current Implementation is w.r.t Sprint - 1. Below is the overview of the current
 
 **GitHub Repo**
 
-Here is the link to the GitHub Repo - https://github.com/prabhuanem/JPaint-Final 
+Here is the link to the GitHub Repo - https://github.com/prabhuanem/JPaint-FinalProject 
 
-Here is the Link to the README file (Mark Down) which is part of GitHub report - https://github.com/prabhuanem/JPaint-Final/blob/master/README.md
+Here is the Link to the README file (Mark Down) which is part of GitHub report - https://github.com/prabhuanem/JPaint-FinalProject/blob/master/README.md
