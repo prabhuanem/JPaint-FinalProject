@@ -37,7 +37,7 @@ Current Implementation is w.r.t Sprint - 1. Below is the overview of the current
 
     1. Even though in the UI other shapes like "Elipse", "Triangle" are present as of now only "Rectangle" is implemented by default
     2. Primary Color is also set by default
-    3. Also the Shading Type is set to default of "Filled In"
+    3. Also the Shading Type is set to default of "Filled In" where by default all the shapes in this case it will be filled in rectangles
 
 **GitHub Repo**
 
