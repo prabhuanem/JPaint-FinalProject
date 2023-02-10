@@ -1,4 +1,4 @@
-package view.drawing;
+package controller.factorypattern;
 
 import view.interfaces.InterShape;
 import view.interfaces.InterShapeCreate;
@@ -14,9 +14,9 @@ public class RectangleCreate implements InterShapeCreate {
     }
 
     @Override
-    public Shape Shapedrawing() {
+    public Shape shapeDrawing() {
         Rectangle2D.Double rectangle;
-        rectangle = new Rectangle2D.Double(shape.getX(), shape.getY(), shape.getWidth(), shape.getHeight());
+        rectangle = new Rectangle2D.Double(shape.pointX(), shape.pointY(), shape.shapeBreadth(), shape.shapeLength());
         return rectangle;
     }
 }

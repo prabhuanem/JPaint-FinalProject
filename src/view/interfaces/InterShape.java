@@ -7,10 +7,10 @@ import java.awt.*;
 
 public interface InterShape {
     void draw(Graphics2D g);
-    int getX();
-    int getY();
-    int getWidth();
-    int getHeight();
+    int pointX();
+    int pointY();
+    int shapeBreadth();
+    int shapeLength();
     Color getPrimaryColor();
     ShapeType getShapeType();
     ShapeShadingType getShadingType();

@@ -1,5 +1,6 @@
 package view.drawing;
 
+import controller.factorypattern.ShapeDrawer;
 import model.ShapeShadingType;
 import model.ShapeType;
 import view.interfaces.InterShape;
@@ -31,22 +32,22 @@ public class Shape implements InterShape {
     }
 
     @Override
-    public int getX() {
+    public int pointX() {
         return X;
     }
 
     @Override
-    public int getY() {
+    public int pointY() {
         return Y;
     }
 
     @Override
-    public int getWidth() {
+    public int shapeBreadth() {
         return width;
     }
 
     @Override
-    public int getHeight() {
+    public int shapeLength() {
         return height;
     }
 
@@ -60,13 +61,11 @@ public class Shape implements InterShape {
         return shadingType;
     }
 
-
     @Override
     public void draw(Graphics2D g2D) {
         ShapeDrawer shapeDrawer = new ShapeDrawer(g2D);
         shapeDrawer.draw(this);
     }
-
 
     @Override
     public Color getPrimaryColor() {
