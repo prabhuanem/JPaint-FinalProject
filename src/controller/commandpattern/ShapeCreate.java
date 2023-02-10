@@ -5,6 +5,7 @@ import controller.IUndoable;
 import model.persistence.ApplicationState;
 import view.gui.PaintCanvas;
 import view.interfaces.IEventCallback;
+import view.interfaces.InterShape;
 
 import java.awt.*;
 
@@ -22,27 +23,32 @@ public class ShapeCreate implements IEventCallback, IUndoable {
                 .shadingType(appState.getActiveShapeShadingType())
                 .firstColor(appState.getActivePrimaryColor().getColor())
                 .secondColor(appState.getActiveSecondaryColor().getColor())
+                .selectedStatus(false)
                 .buildShape();
     }
 
     @Override
     public void run() {
-        AllShape.allShape.add(shape);
+        AllShape.INTER_SHAPE_ARRAY_LIST.add(shape);
         paintCanvas.repaint();
         CommandHistory.add(this);
+
+        for (InterShape shape : AllShape.INTER_SHAPE_ARRAY_LIST.getInterShapes()) {
+            shape.setSelected(false);
+        }
 
     }
 
     @Override
     public void undo() {
-        AllShape.allShape.remove(shape);
+        AllShape.INTER_SHAPE_ARRAY_LIST.remove(shape);
         paintCanvas.repaint();
     }
 
     @Override
-    public void redo()
-    {
-        AllShape.allShape.add(shape);
+    public void redo() {
+        AllShape.INTER_SHAPE_ARRAY_LIST.add(shape);
         paintCanvas.repaint();
+
     }
 }

@@ -15,9 +15,9 @@ public class PaintCanvas extends PaintCanvasBase {
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
-        ArrayList<InterShape> interShapes = AllShape.allShape.getInterShapes();
-        for (InterShape shape : interShapes)
-        {
+        ArrayList<InterShape> shapeList = AllShape.INTER_SHAPE_ARRAY_LIST.getInterShapes();
+
+        for (InterShape shape : shapeList) {
             shape.draw(g2d);
         }
     }

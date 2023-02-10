@@ -1,5 +1,6 @@
 package view.interfaces;
 
+import controller.commandpattern.ShapeBorder;
 import model.ShapeShadingType;
 import model.ShapeType;
 
@@ -17,4 +18,13 @@ public interface InterShape {
     Point leftPoint();
     Point clickedPoint();
     Color getSecondaryColor();
+    void selectShape(ShapeBorder shapeBorder);
+    void movingShapeDrawn(int deltaX, int deltaY);
+    void undoingMovedShape(int deltaX, int deltaY);
+    boolean getSelected();
+    void setSelected(boolean selectedStatus);
+    void pointSetXCoord(int newX);
+    void pointSetYCoord(int newY);
+    int getPastedCount();
+
 }

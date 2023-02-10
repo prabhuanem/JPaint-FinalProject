@@ -1,5 +1,6 @@
 package controller.commandpattern;
 
+import controller.Collision;
 import controller.factorypattern.ShapeDrawer;
 import model.ShapeShadingType;
 import model.ShapeType;
@@ -13,14 +14,19 @@ public class Shape implements InterShape {
     private final ShapeShadingType shadingType;
     private int X, Y, width, height;
     private final Color firstColor, secondColor;
+    private boolean selected;
 
-    public Shape(Point clickedPoint, Point leftPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor, Color secondColor) {
+    private final int pastedCount;
+
+    public Shape(Point clickedPoint, Point leftPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor, Color secondColor,boolean selected, int pastedCount) {
         this.clickedPoint = clickedPoint;
         this.leftPoint = leftPoint;
         this.shapeType = shapeType;
         this.shadingType = shadingType;
         this.firstColor = firstColor;
         this.secondColor = secondColor;
+        this.selected = selected;
+        this.pastedCount = pastedCount;
 
         getCoordinates();
     }
@@ -86,5 +92,36 @@ public class Shape implements InterShape {
     @Override
     public Point leftPoint() {
         return leftPoint;
+    }
+
+    @Override
+    public boolean getSelected() {
+        return this.selected;
+    }
+    @Override
+    public void selectShape(ShapeBorder shapeBorder) {
+        Collision collision = new Collision(shapeBorder, this);
+        this.setSelected(collision.run());
+    }
+    @Override
+    public void setSelected(boolean selectedStatus) {
+        this.selected = selectedStatus;
+    }
+
+    @Override
+    public void movingShapeDrawn(int deltaX, int deltaY) {
+        new Move(deltaX, deltaY, this).run();
+    }
+    @Override
+    public void undoingMovedShape(int deltaX, int deltaY) {
+        new Move(deltaX, deltaY, this).undo();
+    }
+    @Override
+    public void pointSetXCoord(int newX) { this.X = newX; }
+    @Override
+    public  void pointSetYCoord(int newY) { this.Y = newY; }
+    @Override
+    public int getPastedCount() {
+        return this.pastedCount;
     }
 }

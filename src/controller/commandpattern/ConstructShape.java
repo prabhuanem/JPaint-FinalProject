@@ -11,6 +11,8 @@ public class ConstructShape {
     private ShapeShadingType shadingType;
     private Color firstColor, secondColor;
 
+    private boolean selected;
+
     public ConstructShape shapeType(ShapeType shapetype) {
         this.shapeType = shapetype;
         return this;
@@ -38,9 +40,13 @@ public class ConstructShape {
         this.secondColor = secondColor;
         return this;
     }
+    public ConstructShape selectedStatus(boolean status) {
+        this.selected = status;
+        return this;
+    }
 
     public Shape buildShape() {
-        return new Shape(clickPoint, leftPoint, shapeType, shadingType, firstColor, secondColor);
+        return new Shape(clickPoint, leftPoint, shapeType, shadingType, firstColor, secondColor,selected, 0);
     }
 
 }
