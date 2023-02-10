@@ -9,7 +9,7 @@ public class ConstructShape {
     private Point clickPoint, leftPoint;
     private ShapeType shapeType;
     private ShapeShadingType shadingType;
-    private Color firstColor;
+    private Color firstColor, secondColor;
 
     public ConstructShape shapeType(ShapeType shapetype) {
         this.shapeType = shapetype;
@@ -34,9 +34,13 @@ public class ConstructShape {
         this.firstColor = firstColor;
         return this;
     }
+    public ConstructShape secondColor(Color secondColor) {
+        this.secondColor = secondColor;
+        return this;
+    }
 
     public Shape buildShape() {
-        return new Shape(clickPoint, leftPoint, shapeType, shadingType, firstColor);
+        return new Shape(clickPoint, leftPoint, shapeType, shadingType, firstColor, secondColor);
     }
 
 }

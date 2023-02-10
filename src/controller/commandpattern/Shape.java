@@ -8,27 +8,28 @@ import view.interfaces.InterShape;
 import java.awt.*;
 
 public class Shape implements InterShape {
-    private final Point pressedPoint, releasedPoint;
+    private final Point clickedPoint, leftPoint;
     private final ShapeType shapeType;
     private final ShapeShadingType shadingType;
     private int X, Y, width, height;
-    private final Color firstColor;
+    private final Color firstColor, secondColor;
 
-    public Shape(Point pressedPoint, Point releasedPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor) {
-        this.pressedPoint = pressedPoint;
-        this.releasedPoint = releasedPoint;
+    public Shape(Point clickedPoint, Point leftPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor, Color secondColor) {
+        this.clickedPoint = clickedPoint;
+        this.leftPoint = leftPoint;
         this.shapeType = shapeType;
         this.shadingType = shadingType;
         this.firstColor = firstColor;
+        this.secondColor = secondColor;
 
         getCoordinates();
     }
 
     public void getCoordinates() {
-        this.X = Math.min(pressedPoint.x, releasedPoint.x);
-        this.Y = Math.min(pressedPoint.y, releasedPoint.y);
-        this.width = Math.max(pressedPoint.x, releasedPoint.x) - X;
-        this.height = Math.max(pressedPoint.y, releasedPoint.y) - Y;
+        this.X = Math.min(clickedPoint.x, leftPoint.x);
+        this.Y = Math.min(clickedPoint.y, leftPoint.y);
+        this.width = Math.max(clickedPoint.x, leftPoint.x) - X;
+        this.height = Math.max(clickedPoint.y, leftPoint.y) - Y;
     }
 
     @Override
@@ -73,12 +74,17 @@ public class Shape implements InterShape {
     }
 
     @Override
-    public Point getPressedPoint() {
-        return pressedPoint;
+    public Point clickedPoint() {
+        return clickedPoint;
     }
 
     @Override
-    public Point getReleasedPoint() {
-        return releasedPoint;
+    public Color getSecondaryColor() {
+        return secondColor;
+    }
+
+    @Override
+    public Point leftPoint() {
+        return leftPoint;
     }
 }

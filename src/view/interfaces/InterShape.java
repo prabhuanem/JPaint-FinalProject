@@ -14,6 +14,7 @@ public interface InterShape {
     Color getPrimaryColor();
     ShapeType getShapeType();
     ShapeShadingType getShadingType();
-    Point getReleasedPoint();
-    Point getPressedPoint();
+    Point leftPoint();
+    Point clickedPoint();
+    Color getSecondaryColor();
 }

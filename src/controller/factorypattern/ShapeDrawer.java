@@ -6,6 +6,7 @@ import view.interfaces.InterShape;
 import view.interfaces.InterShapeCreate;
 import view.strategypattern.Coloring;
 import view.strategypattern.Outline;
+import view.strategypattern.OutlineAndSolidFill;
 import view.strategypattern.SolidColor;
 
 import java.awt.*;
@@ -49,6 +50,10 @@ public class ShapeDrawer {
         else if (shadingType == ShapeShadingType.OUTLINE)
         {
             coloring.shadingColoring(new Outline(drawShape, shape, g2D));
+        }
+        else if (shadingType == ShapeShadingType.OUTLINE_AND_FILLED_IN)
+        {
+            coloring.shadingColoring(new OutlineAndSolidFill(drawShape, shape, g2D));
         }
         coloring.implementShading();
     }

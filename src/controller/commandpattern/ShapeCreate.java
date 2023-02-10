@@ -21,6 +21,7 @@ public class ShapeCreate implements IEventCallback, IUndoable {
                 .shapeType(appState.getActiveShapeType())
                 .shadingType(appState.getActiveShapeShadingType())
                 .firstColor(appState.getActivePrimaryColor().getColor())
+                .secondColor(appState.getActiveSecondaryColor().getColor())
                 .buildShape();
     }
 

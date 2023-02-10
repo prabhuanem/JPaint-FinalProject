@@ -16,8 +16,8 @@ public class TriangleCreate implements InterShapeCreate {
     public Shape shapeDrawing()
     {
 
-        Point startPoint = shape.getPressedPoint();
-        Point endPoint = shape.getReleasedPoint();
+        Point startPoint = shape.clickedPoint();
+        Point endPoint = shape.leftPoint();
 
         int x1 = startPoint.x;
         int y1 = startPoint.y;
