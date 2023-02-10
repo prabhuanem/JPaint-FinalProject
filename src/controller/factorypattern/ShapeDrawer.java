@@ -1,12 +1,13 @@
 package controller.factorypattern;
 
+import model.ShapeShadingType;
 import model.ShapeType;
-import view.drawing.Coloring;
-import view.drawing.SolidColor;
 import view.interfaces.InterShape;
 import view.interfaces.InterShapeCreate;
+import view.strategypattern.Coloring;
+import view.strategypattern.Outline;
+import view.strategypattern.SolidColor;
 
-import java.awt.Shape;
 import java.awt.*;
 import java.util.Objects;
 
@@ -20,6 +21,7 @@ public class ShapeDrawer {
     public void draw(InterShape shape) {
         Shape drawShape;
         ShapeType shapeType = shape.getShapeType();
+        ShapeShadingType shadingType = shape.getShadingType();
         if (Objects.requireNonNull(shapeType) == ShapeType.RECTANGLE)
         {
             InterShapeCreate shapeFactory = new RectangleCreate(shape);
@@ -40,9 +42,14 @@ public class ShapeDrawer {
             throw new IllegalStateException("Unexpected value: " + shape.getShapeType());
         }
         Coloring coloring = new Coloring();
-        switch (shape.getShadingType()) {
-            default -> coloring.setInterColoring(new SolidColor(drawShape, shape, g2D));
+        if (shadingType == ShapeShadingType.FILLED_IN)
+        {
+            coloring.shadingColoring(new SolidColor(drawShape, shape, g2D));
         }
-        coloring.executeShadingStrategy();
+        else if (shadingType == ShapeShadingType.OUTLINE)
+        {
+            coloring.shadingColoring(new Outline(drawShape, shape, g2D));
+        }
+        coloring.implementShading();
     }
 }

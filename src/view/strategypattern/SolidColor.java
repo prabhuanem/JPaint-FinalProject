@@ -1,4 +1,4 @@
-package view.drawing;
+package view.strategypattern;
 
 import view.interfaces.InterColoring;
 import view.interfaces.InterShape;
@@ -17,7 +17,7 @@ public class SolidColor implements InterColoring {
         this.g2D = G2D;
     }
     @Override
-    public void solidColor() {
+    public void shadeDrawing() {
         g2D.setColor(shape.getPrimaryColor());
         g2D.fill(shapeCreated);
     }

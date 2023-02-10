@@ -1,4 +1,4 @@
-package view.drawing;
+package controller.commandpattern;
 
 import model.ShapeShadingType;
 import model.ShapeType;
@@ -36,7 +36,7 @@ public class ConstructShape {
     }
 
     public Shape buildShape() {
-        return new Shape (clickPoint, leftPoint, shapeType, shadingType, firstColor);
+        return new Shape(clickPoint, leftPoint, shapeType, shadingType, firstColor);
     }
 
 }

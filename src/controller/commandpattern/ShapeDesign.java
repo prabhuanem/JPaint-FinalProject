@@ -1,4 +1,4 @@
-package view.drawing;
+package controller.commandpattern;
 
 import view.interfaces.InterShape;
 

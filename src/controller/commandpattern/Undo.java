@@ -1,4 +1,4 @@
-package view.drawing;
+package controller.commandpattern;
 
 import controller.CommandHistory;
 import view.interfaces.IEventCallback;
