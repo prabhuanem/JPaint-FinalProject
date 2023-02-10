@@ -18,17 +18,22 @@ public class ShapeDrawer {
     }
 
     public void draw(InterShape shape) {
-        Shape shapeToBeDrawn;
+        Shape drawShape;
         ShapeType shapeType = shape.getShapeType();
         if (Objects.requireNonNull(shapeType) == ShapeType.RECTANGLE)
         {
             InterShapeCreate shapeFactory = new RectangleCreate(shape);
-            shapeToBeDrawn = shapeFactory.shapeDrawing();
+            drawShape = shapeFactory.shapeDrawing();
         }
         else if (shapeType == ShapeType.ELLIPSE)
         {
             InterShapeCreate shapeFactory = new EllipseCreate(shape);
-            shapeToBeDrawn = shapeFactory.shapeDrawing();
+            drawShape = shapeFactory.shapeDrawing();
+        }
+        else if (shapeType == ShapeType.TRIANGLE)
+        {
+            InterShapeCreate shapeFactory = new TriangleCreate(shape);
+            drawShape = shapeFactory.shapeDrawing();
         }
         else
         {
@@ -36,7 +41,7 @@ public class ShapeDrawer {
         }
         Coloring coloring = new Coloring();
         switch (shape.getShadingType()) {
-            default -> coloring.setInterColoring(new SolidColor(shapeToBeDrawn, shape, g2D));
+            default -> coloring.setInterColoring(new SolidColor(drawShape, shape, g2D));
         }
         coloring.executeShadingStrategy();
     }

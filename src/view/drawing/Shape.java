@@ -71,4 +71,14 @@ public class Shape implements InterShape {
     public Color getPrimaryColor() {
         return firstColor;
     }
+
+    @Override
+    public Point getPressedPoint() {
+        return pressedPoint;
+    }
+
+    @Override
+    public Point getReleasedPoint() {
+        return releasedPoint;
+    }
 }
