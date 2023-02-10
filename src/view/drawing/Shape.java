@@ -11,13 +11,14 @@ public class Shape implements InterShape {
     private final ShapeType shapeType;
     private final ShapeShadingType shadingType;
     private int X, Y, width, height;
-    private boolean selected;
+    private final Color firstColor;
 
-    public Shape(Point pressedPoint, Point releasedPoint, ShapeType shapeType, ShapeShadingType shadingType) {
+    public Shape(Point pressedPoint, Point releasedPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor) {
         this.pressedPoint = pressedPoint;
         this.releasedPoint = releasedPoint;
         this.shapeType = shapeType;
         this.shadingType = shadingType;
+        this.firstColor = firstColor;
 
         getCoordinates();
     }
@@ -59,15 +60,6 @@ public class Shape implements InterShape {
         return shadingType;
     }
 
-    @Override
-    public Point getPressedPoint() {
-        return pressedPoint;
-    }
-
-    @Override
-    public Point getReleasedPoint() {
-        return releasedPoint;
-    }
 
     @Override
     public void draw(Graphics2D g2D) {
@@ -75,8 +67,9 @@ public class Shape implements InterShape {
         shapeDrawer.draw(this);
     }
 
+
     @Override
-    public boolean getSelected() {
-        return false;
+    public Color getPrimaryColor() {
+        return firstColor;
     }
 }

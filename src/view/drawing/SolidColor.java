@@ -8,17 +8,17 @@ import java.awt.*;
 
 public class SolidColor implements InterColoring {
     private final InterShape shape;
-    private final java.awt.Shape shapeToBeDrawn;
+    private final Shape shapeCreated;
     private final Graphics2D g2D;
 
-    public SolidColor(Shape ShapeToBeDrawn, InterShape Shape, Graphics2D G2D) {
+    public SolidColor(Shape shapeCreated, InterShape Shape, Graphics2D G2D) {
         this.shape = Shape;
-        this.shapeToBeDrawn = ShapeToBeDrawn;
+        this.shapeCreated = shapeCreated;
         this.g2D = G2D;
     }
     @Override
-    public void drawWithSelectedShadingType() {
-        // g2D.setColor(shape.getPrimaryColor());
-        g2D.fill(shapeToBeDrawn);
+    public void solidColor() {
+        g2D.setColor(shape.getPrimaryColor());
+        g2D.fill(shapeCreated);
     }
 }

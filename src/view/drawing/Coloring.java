@@ -10,6 +10,6 @@ public class Coloring {
     }
 
     public void executeShadingStrategy() {
-        interColoring.drawWithSelectedShadingType();
+        interColoring.solidColor();
     }
 }

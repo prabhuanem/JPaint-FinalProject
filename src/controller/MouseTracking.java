@@ -17,6 +17,7 @@ public class MouseTracking extends MouseAdapter {
     public MouseTracking(PaintCanvas paintCanvas, ApplicationState appState) {
         this.paintCanvas = paintCanvas;
         this.appState = appState;
+
     }
 
 

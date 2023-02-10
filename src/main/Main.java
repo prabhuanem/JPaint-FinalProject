@@ -18,9 +18,8 @@ public class Main {
         ApplicationState appState = new ApplicationState(uiModule);
         IJPaintController controller = new JPaintController(uiModule, appState);
         controller.setup();
-        MouseTracking mouseAdapter = new MouseTracking(paintCanvas, appState);
-        paintCanvas.addMouseListener(mouseAdapter);
-
+        MouseTracking mouseTracking = new MouseTracking(paintCanvas, appState);
+        paintCanvas.addMouseListener(mouseTracking);
 
     }
 }
