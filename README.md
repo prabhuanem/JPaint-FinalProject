@@ -28,6 +28,14 @@ Pick a shape
 
 Current Implementation is w.r.t Sprint - 1. Below is the overview of the current project as on Sprint - 1
 
+**GitHub Repo**
+
+Here is the link to the GitHub Repo - https://github.com/prabhuanem/JPaint-FinalProject 
+
+Here is the Link to the README file (Mark Down) which is part of GitHub report - https://github.com/prabhuanem/JPaint-FinalProject/blob/master/README.md
+
+**Sprint - 1**
+
 **Features Implemented**
 
     1. Rectangle Shape Drawing
@@ -39,8 +47,17 @@ Current Implementation is w.r.t Sprint - 1. Below is the overview of the current
     2. Primary Color is also set by default
     3. Also the Shading Type is set to default of "Filled In" where by default all the shapes in this case it will be filled in rectangles
 
-**GitHub Repo**
+**Sprint - 2**
 
-Here is the link to the GitHub Repo - https://github.com/prabhuanem/JPaint-FinalProject 
+**Features Implemented**
 
-Here is the Link to the README file (Mark Down) which is part of GitHub report - https://github.com/prabhuanem/JPaint-FinalProject/blob/master/README.md
+    1. Other 2 shapes (Triangle and Ellipse) are implemented
+    2. All the shading types (FilledIn, Outline and Outline_Filled_In) are implemented
+    3. Select Functionality has been implemented
+    4. Move functionality has been implemented along with Undo/Redo of Move has been implemented
+
+**Bugs (Sprint - 2)**
+
+    1. When shapes created are overlapped select and Move functionality is not working as intended
+
+Note : Will get this fixed in the upcoming sprint's
