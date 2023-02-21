@@ -26,5 +26,7 @@ public interface InterShape {
     void pointSetXCoord(int newX);
     void pointSetYCoord(int newY);
     int getPastedCount();
+    Shape getShape();
+    InterShape clone();
 
 }
