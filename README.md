@@ -61,3 +61,9 @@ Here is the Link to the README file (Mark Down) which is part of GitHub report -
     1. When shapes created are overlapped select and Move functionality is not working as intended
 
 Note : Will get this fixed in the upcoming sprint's
+
+**Sprint - 3**
+
+**Features Implemented**
+    
+    1. Implemented the Copy Functionality. In order for copy functionality to work. First we have to select the shape and click on Copy for the shape to be copied 
