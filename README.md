@@ -65,5 +65,4 @@ Note : Will get this fixed in the upcoming sprint's
 **Sprint - 3**
 
 **Features Implemented**
-    
-    1. Implemented the Copy Functionality. In order for copy functionality to work. First we have to select the shape and click on Copy for the shape to be copied 
+     
