@@ -8,7 +8,7 @@ import java.awt.*;
 public class Outline implements InterColoring {
 
     private final InterShape shape;
-    private final Shape shapeToBeDrawn;
+    private final java.awt.Shape shapeToBeDrawn;
     private final Graphics2D g2D;
 
     public Outline(Shape ShapeToBeDrawn, InterShape Shape, Graphics2D G2D) {

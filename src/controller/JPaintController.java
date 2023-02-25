@@ -1,10 +1,9 @@
 package controller;
 
-import controller.commandpattern.Redo;
-import controller.commandpattern.Undo;
-import controller.prototypedesign.Copy;
 import model.interfaces.IApplicationState;
 import view.EventName;
+import controller.commandpattern.Redo;
+import controller.commandpattern.Undo;
 import view.interfaces.IUiModule;
 
 public class JPaintController implements IJPaintController {
@@ -29,6 +28,5 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, applicationState::setActiveStartAndEndPointMode);
         uiModule.addEvent(EventName.UNDO, () -> new Undo().run());
         uiModule.addEvent(EventName.REDO, () -> new Redo().run());
-        uiModule.addEvent(EventName.COPY, () -> new Copy().run());
     }
 }

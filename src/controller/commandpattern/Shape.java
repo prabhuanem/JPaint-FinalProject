@@ -7,10 +7,8 @@ import model.ShapeType;
 import view.interfaces.InterShape;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
 
-public class Shape implements InterShape, Cloneable {
+public class Shape implements InterShape {
     private final Point clickedPoint, leftPoint;
     private final ShapeType shapeType;
     private final ShapeShadingType shadingType;
@@ -125,28 +123,5 @@ public class Shape implements InterShape, Cloneable {
     @Override
     public int getPastedCount() {
         return this.pastedCount;
-    }
-
-    @Override
-    public java.awt.Shape getShape() {
-        if (shapeType == ShapeType.RECTANGLE) {
-            return new Rectangle2D.Double(X, Y, width, height);
-        } else if (shapeType == ShapeType.ELLIPSE) {
-            return new Ellipse2D.Double(X, Y, width, height);
-        } else if (shapeType == ShapeType.TRIANGLE) {
-            int[] xPoints = {X + width / 2, X, X + width};
-            int[] yPoints = {Y, Y + height, Y + height};
-            return new Polygon(xPoints, yPoints, 3);
-        } else {
-            throw new IllegalStateException("Unexpected value: " + shapeType);
-        }
-    }
-
-    public InterShape clone() {
-        try {
-            return (InterShape) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
     }
 }
