@@ -13,28 +13,23 @@ public class MoveShape implements IEventCallback, IUndoable {
     private final Point clickPoint;
     private final Point leftPoint;
     private final PaintCanvas paintCanvas;
-    private int movePointX, movePointY;
-    private final ShapeDesign shapeMoved = new ShapeDesign();
+    private final ShapeDesign movedShapes = new ShapeDesign();
     private final ArrayList<InterShape> shapeArrayList = AllShape.INTER_SHAPE_ARRAY_LIST.getInterShapes();
+    private InterShape shape;
 
-    public MoveShape(Point clickPoint, Point leftPoint, PaintCanvas PaintCanvas) {
+    public MoveShape(Point clickPoint, Point leftPoint, PaintCanvas paintCanvas) {
         this.clickPoint = clickPoint;
         this.leftPoint = leftPoint;
-        this.paintCanvas = PaintCanvas;
-        newMovePoint();
-    }
-
-    public void newMovePoint() {
-        movePointX = leftPoint.x - clickPoint.x;
-        movePointY = leftPoint.y - clickPoint.y;
+        this.paintCanvas = paintCanvas;
+        this.shape = null;
     }
 
     @Override
     public void run() {
         for (InterShape shape : shapeArrayList) {
             if (shape.getSelected()) {
-                shape.movingShapeDrawn(movePointX, movePointY);
-                shapeMoved.add(shape);
+                InterShape movedShape = move(shape);
+                movedShapes.add(movedShape);
             }
         }
         CommandHistory.add(this);
@@ -43,17 +38,32 @@ public class MoveShape implements IEventCallback, IUndoable {
 
     @Override
     public void undo() {
-        for (InterShape shape : shapeMoved.getInterShapes()) {
-            shape.undoingMovedShape(movePointX, movePointY);
+        for (InterShape shape : movedShapes.getInterShapes()) {
+            undoMove(shape);
         }
         paintCanvas.repaint();
     }
 
     @Override
     public void redo() {
-        for (InterShape shape : shapeMoved.getInterShapes()) {
-            shape.movingShapeDrawn(movePointX, movePointY);
+        for (InterShape shape : movedShapes.getInterShapes()) {
+            move(shape);
         }
         paintCanvas.repaint();
+    }
+
+    private InterShape move(InterShape shape) {
+        int movePointX = leftPoint.x - clickPoint.x;
+        int movePointY = leftPoint.y - clickPoint.y;
+        shape.pointSetXCoord(shape.pointX() + movePointX);
+        shape.pointSetYCoord(shape.pointY() + movePointY);
+        return shape;
+    }
+
+    private void undoMove(InterShape shape) {
+        int movePointX = leftPoint.x - clickPoint.x;
+        int movePointY = leftPoint.y - clickPoint.y;
+        shape.pointSetXCoord(shape.pointX() - movePointX);
+        shape.pointSetYCoord(shape.pointY() - movePointY);
     }
 }
