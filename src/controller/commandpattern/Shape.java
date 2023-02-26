@@ -39,22 +39,22 @@ public class Shape implements InterShape {
     }
 
     @Override
-    public int pointX() {
+    public int coordX() {
         return X;
     }
 
     @Override
-    public int pointY() {
+    public int coordY() {
         return Y;
     }
 
     @Override
-    public int shapeBreadth() {
+    public int breadthDrawing() {
         return width;
     }
 
     @Override
-    public int shapeLength() {
+    public int lengthDrawing() {
         return height;
     }
 
@@ -108,14 +108,6 @@ public class Shape implements InterShape {
         this.selected = selectedStatus;
     }
 
-    public void movingShapeDrawn(int deltaX, int deltaY) {
-        new MoveShape(clickedPoint(), new Point(leftPoint().x + deltaX, leftPoint().y + deltaY), null).run();
-    }
-
-    @Override
-    public void undoingMovedShape(int deltaX, int deltaY) {
-        new MoveShape(clickedPoint(), new Point(leftPoint().x + deltaX, leftPoint().y + deltaY), null).undo();
-    }
     @Override
     public void pointSetXCoord(int newX) { this.X = newX; }
     @Override
@@ -127,11 +119,19 @@ public class Shape implements InterShape {
 
     @Override
     public void copy() {
-        this.resetPastedCount();
-        AllShape.copiedItems.add(this);
+        this.zeroCount();
+        AllShape.copiedItems_History.add(this);
     }
     @Override
-    public void resetPastedCount() {
+    public void zeroCount() {
         pastedCount = 0;
+    }
+    @Override
+    public int pasteDecrease() {
+        return pastedCount--;
+    }
+    @Override
+    public int pasteIncrease() {
+        return pastedCount++;
     }
 }

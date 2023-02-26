@@ -15,13 +15,12 @@ public class MoveShape implements IEventCallback, IUndoable {
     private final PaintCanvas paintCanvas;
     private final ShapeDesign movedShapes = new ShapeDesign();
     private final ArrayList<InterShape> shapeArrayList = AllShape.INTER_SHAPE_ARRAY_LIST.getInterShapes();
-    private InterShape shape;
+
 
     public MoveShape(Point clickPoint, Point leftPoint, PaintCanvas paintCanvas) {
         this.clickPoint = clickPoint;
         this.leftPoint = leftPoint;
         this.paintCanvas = paintCanvas;
-        this.shape = null;
     }
 
     @Override
@@ -55,15 +54,15 @@ public class MoveShape implements IEventCallback, IUndoable {
     private InterShape move(InterShape shape) {
         int movePointX = leftPoint.x - clickPoint.x;
         int movePointY = leftPoint.y - clickPoint.y;
-        shape.pointSetXCoord(shape.pointX() + movePointX);
-        shape.pointSetYCoord(shape.pointY() + movePointY);
+        shape.pointSetXCoord(shape.coordX() + movePointX);
+        shape.pointSetYCoord(shape.coordY() + movePointY);
         return shape;
     }
 
     private void undoMove(InterShape shape) {
         int movePointX = leftPoint.x - clickPoint.x;
         int movePointY = leftPoint.y - clickPoint.y;
-        shape.pointSetXCoord(shape.pointX() - movePointX);
-        shape.pointSetYCoord(shape.pointY() - movePointY);
+        shape.pointSetXCoord(shape.coordX() - movePointX);
+        shape.pointSetYCoord(shape.coordY() - movePointY);
     }
 }

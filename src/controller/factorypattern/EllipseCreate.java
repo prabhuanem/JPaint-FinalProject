@@ -16,10 +16,10 @@ public class EllipseCreate implements InterShapeCreate {
     @Override
     public Shape shapeDrawing() {
         Shape ellipse;
-        int x = shape.pointX();
-        int y = shape.pointY();
-        int width = shape.shapeBreadth();
-        int height = shape.shapeLength();
+        int x = shape.coordX();
+        int y = shape.coordY();
+        int width = shape.breadthDrawing();
+        int height = shape.lengthDrawing();
         ellipse = new Ellipse2D.Double(x, y, width, height);
         return ellipse;
     }

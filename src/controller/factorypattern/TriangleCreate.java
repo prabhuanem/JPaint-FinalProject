@@ -20,10 +20,10 @@ public class TriangleCreate implements InterShapeCreate {
         int[] xPoints;
         int[] yPoints;
 
-        int newPointX = shape.pointX();
-        int newPointY = shape.pointY();
-        int newBreadth = shape.shapeBreadth();
-        int newLength = shape.shapeLength();
+        int newPointX = shape.coordX();
+        int newPointY = shape.coordY();
+        int newBreadth = shape.breadthDrawing();
+        int newLength = shape.lengthDrawing();
 
         xPoints = new int[] {(newPointX + (newPointX + newBreadth)) / 2, newPointX, newPointX + newBreadth };
         yPoints = new int[] {newPointY , newPointY + newLength, newPointY + newLength};

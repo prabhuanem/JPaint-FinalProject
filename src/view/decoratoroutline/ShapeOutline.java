@@ -20,10 +20,10 @@ public class ShapeOutline {
         g.setStroke(stroke);
         g.setColor(Color.BLACK);
         Shape shapeToDraw;
-        int x = shape.pointX() - 5;
-        int y = shape.pointY() - 5;
-        int breadth = shape.shapeBreadth() + 10;
-        int length = shape.shapeLength() + 10;
+        int x = shape.coordX() - 5;
+        int y = shape.coordY() - 5;
+        int breadth = shape.breadthDrawing() + 10;
+        int length = shape.lengthDrawing() + 10;
 
         switch (shapeType) {
             case RECTANGLE -> shapeToDraw = new Rectangle2D.Double(x, y, breadth, length);

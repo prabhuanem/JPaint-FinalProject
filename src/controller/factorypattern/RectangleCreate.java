@@ -16,7 +16,7 @@ public class RectangleCreate implements InterShapeCreate {
     @Override
     public Shape shapeDrawing() {
         Rectangle2D.Double rectangle;
-        rectangle = new Rectangle2D.Double(shape.pointX(), shape.pointY(), shape.shapeBreadth(), shape.shapeLength());
+        rectangle = new Rectangle2D.Double(shape.coordX(), shape.coordY(), shape.breadthDrawing(), shape.lengthDrawing());
         return rectangle;
     }
 }
