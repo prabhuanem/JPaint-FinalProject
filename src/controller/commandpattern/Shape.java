@@ -16,7 +16,7 @@ public class Shape implements InterShape {
     private final Color firstColor, secondColor;
     private boolean selected;
 
-    private final int pastedCount;
+    private int pastedCount;
 
     public Shape(Point clickedPoint, Point leftPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor, Color secondColor,boolean selected, int pastedCount) {
         this.clickedPoint = clickedPoint;
@@ -108,13 +108,13 @@ public class Shape implements InterShape {
         this.selected = selectedStatus;
     }
 
-    @Override
     public void movingShapeDrawn(int deltaX, int deltaY) {
-        new Move(deltaX, deltaY, this).run();
+        new MoveShape(clickedPoint(), new Point(leftPoint().x + deltaX, leftPoint().y + deltaY), null).run();
     }
+
     @Override
     public void undoingMovedShape(int deltaX, int deltaY) {
-        new Move(deltaX, deltaY, this).undo();
+        new MoveShape(clickedPoint(), new Point(leftPoint().x + deltaX, leftPoint().y + deltaY), null).undo();
     }
     @Override
     public void pointSetXCoord(int newX) { this.X = newX; }
@@ -123,5 +123,15 @@ public class Shape implements InterShape {
     @Override
     public int getPastedCount() {
         return this.pastedCount;
+    }
+
+    @Override
+    public void copy() {
+        this.resetPastedCount();
+        AllShape.copiedItems.add(this);
+    }
+    @Override
+    public void resetPastedCount() {
+        pastedCount = 0;
     }
 }
