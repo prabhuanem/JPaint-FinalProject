@@ -23,13 +23,13 @@ public class ConstructShape {
         return this;
     }
 
-    public ConstructShape pressedPoint(Point pPoint) {
-        this.clickPoint = pPoint;
+    public ConstructShape clickedPoint(Point clickPoint) {
+        this.clickPoint = clickPoint;
         return this;
     }
 
-    public ConstructShape releasedPoint(Point rPoint) {
-        this.leftPoint = rPoint;
+    public ConstructShape leftPoint(Point leftPoint) {
+        this.leftPoint = leftPoint;
         return this;
     }
     public ConstructShape firstColor(Color firstColor) {

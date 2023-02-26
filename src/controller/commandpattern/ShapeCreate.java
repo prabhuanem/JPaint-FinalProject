@@ -17,8 +17,8 @@ public class ShapeCreate implements IEventCallback, IUndoable {
         this.paintCanvas = paintCanvas;
 
         shape = new ConstructShape()
-                .pressedPoint(pressedPoint)
-                .releasedPoint(releasedPoint)
+                .clickedPoint(pressedPoint)
+                .leftPoint(releasedPoint)
                 .shapeType(appState.getActiveShapeType())
                 .shadingType(appState.getActiveShapeShadingType())
                 .firstColor(appState.getActivePrimaryColor().getColor())

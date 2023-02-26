@@ -56,13 +56,26 @@ Here is the Link to the README file (Mark Down) which is part of GitHub report -
     3. Select Functionality has been implemented
     4. Move functionality has been implemented along with Undo/Redo of Move has been implemented
 
-**Bugs (Sprint - 2)**
-
-    1. When shapes created are overlapped select and Move functionality is not working as intended
-
 Note : Will get this fixed in the upcoming sprint's
 
 **Sprint - 3**
 
 **Features Implemented**
-     
+
+    1. Implemented Shape Decorator (Which decorates the shape with a dashed line when the shape is selected)
+    2. Implemented Copy, Paste and Delete Functionalities
+    3. Implemented Undo/Redo of Paste and Delete functionalities
+
+**Bugs (Sprint - 3)**
+
+    1. When shapes created are overlapped and when selecting both the shapes are getting selected. Will try to fix it in next sprint
+
+**Design Patterns**
+
+Below are the design patterns implemented in this project
+
+    1. Factory Method Pattern
+    2. Command Pattern
+    3. Strategy Pattern
+    4. Builder Pattern
+    5. Decorator Pattern

@@ -22,7 +22,7 @@ public class PasteShape implements IEventCallback, IUndoable {
     public void run() {
         for (InterShape shape : copiedItemsHistory) {
             Shape copiedShape = new Shape(shape.clickedPoint(), shape.leftPoint(), shape.getShapeType(), shape.getShadingType(), shape.getPrimaryColor(), shape.getSecondaryColor(),false, shape.pasteIncrease());
-            copiedShape.pointSetXCoord(shape.coordX() + 300 * shape.getPastedCount());
+            copiedShape.pointSetXCoord(shape.coordX() + 125 * shape.getPastedCount());
             copiedShape.pointSetYCoord(shape.coordY() + 45 * shape.getPastedCount());
             pastedShapes.add(copiedShape);
         }
