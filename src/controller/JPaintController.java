@@ -1,5 +1,6 @@
 package controller;
 
+import controller.commandpattern.Copy;
 import model.interfaces.IApplicationState;
 import view.EventName;
 import controller.commandpattern.Redo;
@@ -28,5 +29,6 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, applicationState::setActiveStartAndEndPointMode);
         uiModule.addEvent(EventName.UNDO, () -> new Undo().run());
         uiModule.addEvent(EventName.REDO, () -> new Redo().run());
+        uiModule.addEvent(EventName.COPY, () -> new Copy().run());
     }
 }
