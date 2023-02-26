@@ -1,11 +1,8 @@
 package controller;
 
-import controller.commandpattern.Copy;
-import controller.commandpattern.PasteShape;
+import controller.commandpattern.*;
 import model.interfaces.IApplicationState;
 import view.EventName;
-import controller.commandpattern.Redo;
-import controller.commandpattern.Undo;
 import view.gui.PaintCanvas;
 import view.interfaces.IUiModule;
 
@@ -36,5 +33,6 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.REDO, () -> new Redo().run());
         uiModule.addEvent(EventName.COPY, () -> new Copy().run());
         uiModule.addEvent(EventName.PASTE, () -> new PasteShape(paintCanvas).run());
+        uiModule.addEvent(EventName.DELETE, () -> new Delete(paintCanvas).run());
     }
 }
