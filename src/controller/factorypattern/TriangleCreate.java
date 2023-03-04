@@ -6,10 +6,10 @@ import view.interfaces.InterShapeCreate;
 import java.awt.*;
 
 public class TriangleCreate implements InterShapeCreate {
-    private final InterShape shape;
+    private final InterShape drawing;
 
-    public TriangleCreate(InterShape Shape ) {
-        this.shape = Shape;
+    public TriangleCreate(InterShape drawing) {
+        this.drawing = drawing;
     }
 
     public Shape shapeDrawing()
@@ -20,10 +20,10 @@ public class TriangleCreate implements InterShapeCreate {
         int[] xPoints;
         int[] yPoints;
 
-        int newPointX = shape.coordX();
-        int newPointY = shape.coordY();
-        int newBreadth = shape.breadthDrawing();
-        int newLength = shape.lengthDrawing();
+        int newPointX = drawing.coordX();
+        int newPointY = drawing.coordY();
+        int newBreadth = drawing.breadthDrawing();
+        int newLength = drawing.lengthDrawing();
 
         xPoints = new int[] {(newPointX + (newPointX + newBreadth)) / 2, newPointX, newPointX + newBreadth };
         yPoints = new int[] {newPointY , newPointY + newLength, newPointY + newLength};

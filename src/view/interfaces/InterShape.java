@@ -22,8 +22,8 @@ public interface InterShape {
 
     boolean getSelected();
     void setSelected(boolean selectedStatus);
-    void pointSetXCoord(int newX);
-    void pointSetYCoord(int newY);
+    void pointSetXCoord(int locationX);
+    void pointSetYCoord(int locationY);
     int getPastedCount();
     void copy();
     void zeroCount();

@@ -109,9 +109,9 @@ public class Shape implements InterShape {
     }
 
     @Override
-    public void pointSetXCoord(int newX) { this.X = newX; }
+    public void pointSetXCoord(int locationX) { this.X = locationX; }
     @Override
-    public  void pointSetYCoord(int newY) { this.Y = newY; }
+    public  void pointSetYCoord(int locationY) { this.Y = locationY; }
     @Override
     public int getPastedCount() {
         return this.pastedCount;
@@ -133,5 +133,9 @@ public class Shape implements InterShape {
     @Override
     public int pasteIncrease() {
         return pastedCount++;
+    }
+    public void setPastedCount(int pastedCount)
+    {
+        this.pastedCount = pastedCount;
     }
 }

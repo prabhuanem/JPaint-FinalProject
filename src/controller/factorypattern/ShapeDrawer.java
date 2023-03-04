@@ -25,18 +25,18 @@ public class ShapeDrawer {
         ShapeShadingType shadingType = shape.getShadingType();
         if (Objects.requireNonNull(shapeType) == ShapeType.RECTANGLE)
         {
-            InterShapeCreate shapeFactory = new RectangleCreate(shape);
-            drawShape = shapeFactory.shapeDrawing();
+            InterShapeCreate shapeDraw = new RectangleCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
         }
         else if (shapeType == ShapeType.ELLIPSE)
         {
-            InterShapeCreate shapeFactory = new EllipseCreate(shape);
-            drawShape = shapeFactory.shapeDrawing();
+            InterShapeCreate shapeDraw = new EllipseCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
         }
         else if (shapeType == ShapeType.TRIANGLE)
         {
-            InterShapeCreate shapeFactory = new TriangleCreate(shape);
-            drawShape = shapeFactory.shapeDrawing();
+            InterShapeCreate shapeDraw = new TriangleCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
         }
         else
         {

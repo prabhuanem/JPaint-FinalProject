@@ -3,6 +3,7 @@ package controller;
 import controller.commandpattern.MoveShape;
 import controller.commandpattern.SelectShape;
 import controller.commandpattern.ShapeCreate;
+import model.MouseMode;
 import model.persistence.ApplicationState;
 import view.gui.PaintCanvas;
 
@@ -32,18 +33,23 @@ public class MouseTracking extends MouseAdapter {
     public void mouseReleased(MouseEvent e) {
         leftPoint = e.getPoint();
         {
-            switch (appState.getActiveMouseMode()) {
-                case DRAW -> {
-                    ShapeCreate newShape = new ShapeCreate(clickPoint, leftPoint, paintCanvas, appState);
-                    newShape.run();
-                }
-                case SELECT -> {
-                    SelectShape selectShape = new SelectShape(clickPoint, leftPoint, paintCanvas);
-                    selectShape.run();
-                }
-                case MOVE -> {
-                    MoveShape moveShape = new MoveShape(clickPoint, leftPoint, paintCanvas);
-                    moveShape.run();
+            MouseMode[] modes = MouseMode.values();
+            for(MouseMode mode : modes) {
+                if (appState.getActiveMouseMode() == mode) {
+                    switch (mode) {
+                        case DRAW -> {
+                            ShapeCreate newShape = new ShapeCreate(clickPoint, leftPoint, paintCanvas, appState);
+                            newShape.run();
+                        }
+                        case SELECT -> {
+                            SelectShape selectShape = new SelectShape(clickPoint, leftPoint, paintCanvas);
+                            selectShape.run();
+                        }
+                        case MOVE -> {
+                            MoveShape moveShape = new MoveShape(clickPoint, leftPoint, paintCanvas);
+                            moveShape.run();
+                        }
+                    }
                 }
             }
 

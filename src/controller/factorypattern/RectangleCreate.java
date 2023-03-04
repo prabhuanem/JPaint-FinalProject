@@ -7,16 +7,16 @@ import java.awt.Shape;
 import java.awt.geom.Rectangle2D;
 
 public class RectangleCreate implements InterShapeCreate {
-    private final InterShape shape;
+    private final InterShape drawing;
 
-    public RectangleCreate(InterShape Shape ) {
-        this.shape = Shape;
+    public RectangleCreate(InterShape drawing) {
+        this.drawing = drawing;
     }
 
     @Override
     public Shape shapeDrawing() {
         Rectangle2D.Double rectangle;
-        rectangle = new Rectangle2D.Double(shape.coordX(), shape.coordY(), shape.breadthDrawing(), shape.lengthDrawing());
+        rectangle = new Rectangle2D.Double(drawing.coordX(), drawing.coordY(), drawing.breadthDrawing(), drawing.lengthDrawing());
         return rectangle;
     }
 }

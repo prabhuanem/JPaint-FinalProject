@@ -8,14 +8,14 @@ public class ShapeDesign {
     private final ArrayList<InterShape> interShapes = new ArrayList<>();
 
 
-    public void add(InterShape shape) {
-        if(!interShapes.contains(shape))
-            interShapes.add(shape);
+    public void add(InterShape drawing) {
+        if(!interShapes.contains(drawing))
+            interShapes.add(drawing);
     }
 
-    public void remove(InterShape shape){
+    public void remove(InterShape drawing){
 
-        interShapes.remove(shape);
+        interShapes.remove(drawing);
     }
 
     public ArrayList<InterShape> getInterShapes() {

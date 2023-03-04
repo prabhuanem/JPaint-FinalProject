@@ -38,7 +38,7 @@ Here is the Link to the README file (Mark Down) which is part of GitHub report -
 
 **Features Implemented**
 
-    1. Rectangle Shape Drawing
+    1. Rectangle drawing Drawing
     2. Undo/Redo functionality
 
 **Key Points**
@@ -62,7 +62,7 @@ Note : Will get this fixed in the upcoming sprint's
 
 **Features Implemented**
 
-    1. Implemented Shape Decorator (Which decorates the shape with a dashed line when the shape is selected)
+    1. Implemented drawing Decorator (Which decorates the shape with a dashed line when the shape is selected)
     2. Implemented Copy, Paste and Delete Functionalities
     3. Implemented Undo/Redo of Paste and Delete functionalities
 

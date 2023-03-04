@@ -13,10 +13,19 @@ public class Collision {
     }
 
     public boolean run() {
-        return (iBorder.coordX() < shapeBorderOutline.coordX() + shapeBorderOutline.breadthDrawing() &&
-                iBorder.coordX() + iBorder.getBreadth() > shapeBorderOutline.coordX() &&
-                iBorder.coordY() < shapeBorderOutline.coordY() + shapeBorderOutline.lengthDrawing() &&
-                iBorder.coordY() + iBorder.getLength() > shapeBorderOutline.coordY());
+        int iCoordX = iBorder.coordX();
+        int iCoordY = iBorder.coordY();
+        int iBreadth = iBorder.getBreadth();
+        int iLength = iBorder.getLength();
+        int shapeCoordX = shapeBorderOutline.coordX();
+        int shapeCoordY = shapeBorderOutline.coordY();
+        int shapeBreadth = shapeBorderOutline.breadthDrawing();
+        int shapeLength = shapeBorderOutline.lengthDrawing();
+
+        boolean intersectX = iCoordX < shapeCoordX + shapeBreadth && iCoordX + iBreadth > shapeCoordX;
+        boolean intersectY = iCoordY < shapeCoordY + shapeLength && iCoordY + iLength > shapeCoordY;
+
+        return intersectX && intersectY;
     }
 
 }

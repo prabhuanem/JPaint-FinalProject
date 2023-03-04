@@ -7,19 +7,19 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class EllipseCreate implements InterShapeCreate {
-    private final InterShape shape;
+    private final InterShape drawing;
 
-    public EllipseCreate(InterShape Shape ) {
-        this.shape = Shape;
+    public EllipseCreate(InterShape drawing ) {
+        this.drawing = drawing;
     }
 
     @Override
     public Shape shapeDrawing() {
         Shape ellipse;
-        int x = shape.coordX();
-        int y = shape.coordY();
-        int width = shape.breadthDrawing();
-        int height = shape.lengthDrawing();
+        int x = drawing.coordX();
+        int y = drawing.coordY();
+        int width = drawing.breadthDrawing();
+        int height = drawing.lengthDrawing();
         ellipse = new Ellipse2D.Double(x, y, width, height);
         return ellipse;
     }

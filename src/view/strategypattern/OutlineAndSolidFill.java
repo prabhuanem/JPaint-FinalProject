@@ -7,23 +7,23 @@ import java.awt.*;
 
 public class OutlineAndSolidFill implements InterColoring {
 
-    private final InterShape shape;
-    private final java.awt.Shape shapeToBeDrawn;
+    private final InterShape drawing;
+    private final Shape shapeCreated;
     private final Graphics2D g2D;
 
-    public OutlineAndSolidFill(Shape ShapeToBeDrawn, InterShape Shape, Graphics2D G2D) {
-        this.shape = Shape;
-        this.shapeToBeDrawn = ShapeToBeDrawn;
+    public OutlineAndSolidFill(Shape shapeCreated, InterShape drawing, Graphics2D G2D) {
+        this.drawing = drawing;
+        this.shapeCreated = shapeCreated;
         this.g2D = G2D;
     }
 
     @Override
     public void shadeDrawing() {
-        g2D.setColor(shape.getPrimaryColor());
-        g2D.fill(shapeToBeDrawn);
+        g2D.setColor(drawing.getPrimaryColor());
+        g2D.fill(shapeCreated);
         g2D.setStroke(new BasicStroke(4));
-        g2D.setColor(shape.getSecondaryColor());
-        g2D.draw(shapeToBeDrawn);
+        g2D.setColor(drawing.getSecondaryColor());
+        g2D.draw(shapeCreated);
 
     }
 }
