@@ -2,6 +2,7 @@ package controller;
 
 import controller.commandpattern.*;
 import controller.compositepattern.GroupShape;
+import controller.compositepattern.UngroupShape;
 import model.interfaces.IApplicationState;
 import view.EventName;
 import view.gui.PaintCanvas;
@@ -60,5 +61,6 @@ public class JPaintController implements IJPaintController {
         });
         uiModule.addEvent(EventName.DELETE, () -> new Delete(paintCanvas).run());
         uiModule.addEvent(EventName.GROUP, () -> new GroupShape(paintCanvas).run());
+        uiModule.addEvent(EventName.UNGROUP, () -> new UngroupShape(paintCanvas).run());
     }
 }
