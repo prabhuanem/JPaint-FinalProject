@@ -36,11 +36,11 @@ public class ShapeBorder implements IBorder {
         return this.Y;
     }
     @Override
-    public int getLength() {
+    public int length() {
         return this.length;
     }
     @Override
-    public int getBreadth() {
+    public int breadth() {
         return this.breadth;
     }
 }

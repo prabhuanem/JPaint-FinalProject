@@ -30,4 +30,7 @@ public interface InterShape {
     int pasteDecrease();
     int pasteIncrease();
 
+    void shapeMoving(int locationX, int locationY);
+    void undoingMovedShape(int locationX, int locationY);
+
 }

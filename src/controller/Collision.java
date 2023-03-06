@@ -15,8 +15,8 @@ public class Collision {
     public boolean run() {
         int iCoordX = iBorder.coordX();
         int iCoordY = iBorder.coordY();
-        int iBreadth = iBorder.getBreadth();
-        int iLength = iBorder.getLength();
+        int iBreadth = iBorder.breadth();
+        int iLength = iBorder.length();
         int shapeCoordX = shapeBorderOutline.coordX();
         int shapeCoordY = shapeBorderOutline.coordY();
         int shapeBreadth = shapeBorderOutline.breadthDrawing();

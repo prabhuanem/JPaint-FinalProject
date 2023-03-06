@@ -4,6 +4,7 @@ import controller.Collision;
 import controller.factorypattern.ShapeDrawer;
 import model.ShapeShadingType;
 import model.ShapeType;
+import view.gui.PaintCanvas;
 import view.interfaces.InterShape;
 
 import java.awt.*;
@@ -15,8 +16,8 @@ public class Shape implements InterShape {
     private int X, Y, width, height;
     private final Color firstColor, secondColor;
     private boolean selected;
-
     private int pastedCount;
+    private PaintCanvas paintCanvas;
 
     public Shape(Point clickedPoint, Point leftPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor, Color secondColor,boolean selected, int pastedCount) {
         this.clickedPoint = clickedPoint;
@@ -131,11 +132,19 @@ public class Shape implements InterShape {
         return pastedCount--;
     }
     @Override
-    public int pasteIncrease() {
+    public int pasteIncrease()
+    {
         return pastedCount++;
     }
     public void setPastedCount(int pastedCount)
     {
         this.pastedCount = pastedCount;
+    }
+    public void shapeMoving(int locationX, int locationY){
+        new MoveShape(clickedPoint, leftPoint, paintCanvas).run();
+    }
+
+    public void undoingMovedShape(int locationX, int locationY){
+        new MoveShape(clickedPoint, leftPoint,paintCanvas).undo();
     }
 }

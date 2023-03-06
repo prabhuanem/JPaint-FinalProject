@@ -22,10 +22,7 @@ public class SelectShape implements IEventCallback {
     @Override
     public void run() {
         ShapeBorder shapeBorder = new ShapeBorder(clickPoint, leftPoint);
-
-        for (InterShape shape : allList) {
-            shape.selectShape(shapeBorder);
-        }
+        allList.forEach(shape -> shape.selectShape(shapeBorder));
         paintCanvas.repaint();
     }
 }

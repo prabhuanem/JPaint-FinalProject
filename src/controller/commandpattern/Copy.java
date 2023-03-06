@@ -12,10 +12,9 @@ public class Copy implements IEventCallback {
     @Override
     public void run() {
         copiedItemsHistory.clear();
-        for (InterShape shape: allList) {
-            if (shape.getSelected()) {
-                shape.copy();
-            }
-        }
+        allList.stream()
+                .filter(InterShape::getSelected)
+                .forEach(InterShape::copy);
     }
+
 }
