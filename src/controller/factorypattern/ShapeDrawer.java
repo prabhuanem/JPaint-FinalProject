@@ -38,6 +38,31 @@ public class ShapeDrawer {
             InterShapeCreate shapeDraw = new TriangleCreate(shape);
             drawShape = shapeDraw.shapeDrawing();
         }
+        else if (shapeType == ShapeType.STAR)
+        {
+            InterShapeCreate shapeDraw = new StarCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
+        }
+        else if (shapeType == ShapeType.DIAMOND)
+        {
+            InterShapeCreate shapeDraw = new DiamondCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
+        }
+        else if (shapeType == ShapeType.ROUNDED_RECTANGLE)
+        {
+            InterShapeCreate shapeDraw = new RoundedRectangleCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
+        }
+        else if (shapeType == ShapeType.RECTANGLE_CALLOUT)
+        {
+            InterShapeCreate shapeDraw = new RectangleCalloutCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
+        }
+        else if (shapeType == ShapeType.OCTAGON)
+        {
+            InterShapeCreate shapeDraw = new OctagonCreate(shape);
+            drawShape = shapeDraw.shapeDrawing();
+        }
         else
         {
             throw new IllegalStateException("Unexpected value: " + shape.getShapeType());
