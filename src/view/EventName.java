@@ -37,5 +37,6 @@ public enum EventName {
 	PASTE,
 	DELETE,
 	GROUP,
-	UNGROUP
+	UNGROUP,
+	TOGGLE_GRID
 }

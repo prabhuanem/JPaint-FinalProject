@@ -9,12 +9,23 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class PaintCanvas extends PaintCanvasBase {
+    private final Grid grid = new Grid(10);
 
-    public Graphics2D getGraphics2D() {return (Graphics2D) getGraphics();}
+    public Graphics2D getGraphics2D() {
+        return (Graphics2D) getGraphics();
+    }
+
+    public void toggleGrid()
+    {
+        grid.toggleVisibility();
+        repaint();
+    }
+
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
+        grid.draw(g,getWidth(),getHeight());
         Graphics2D g2d = (Graphics2D) g;
         ArrayList<InterShape> shapeList = AllShape.INTER_SHAPE_ARRAY_LIST.getInterShapes();
 
