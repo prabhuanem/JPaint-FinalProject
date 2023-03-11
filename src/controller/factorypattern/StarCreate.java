@@ -13,6 +13,9 @@ public class StarCreate implements InterShapeCreate {
         this.drawing = drawing;
     }
 
+    /**
+     * @return - Using Path2D double to draw the Star by calculating the dimensions and closing the path accordingly to create the shape
+     */
     @Override
     public Shape shapeDrawing() {
         Path2D.Double star = new Path2D.Double();

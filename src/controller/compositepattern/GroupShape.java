@@ -32,9 +32,7 @@ public class GroupShape implements IEventCallback, IUndoable {
             dynamicList.removeIf(shape -> shape instanceof DrawingGroup);
             allList.add(shapeGroup);
         }
-        else {
-            return;
-        }
+        else return;
         paintCanvas.repaint();
         CommandHistory.add(this);
     }

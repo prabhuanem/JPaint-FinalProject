@@ -45,6 +45,9 @@ public class ConstructShape {
         return this;
     }
 
+    /**
+     * @return - Shape will be build here and returned accordingly
+     */
     public Shape buildShape() {
         return new Shape(clickPoint, leftPoint, shapeType, shadingType, firstColor, secondColor,selected, 0);
     }

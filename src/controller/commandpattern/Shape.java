@@ -19,6 +19,16 @@ public class Shape implements InterShape {
     private int pastedCount;
     private PaintCanvas paintCanvas;
 
+    /**
+     * @param clickedPoint - Captures the location where mouse is clicked
+     * @param leftPoint - captures the location where mouse is left
+     * @param shapeType - captures/reads the shapeType (Choose by user from the dropdown of 'ShapeType')
+     * @param shadingType - captures/reads the shadingType (Choose by user from the dropdown of 'ShadingType')
+     * @param firstColor - captures/reads the active primary color
+     * @param secondColor - captures/reads the active secondary color
+     * @param selected - Checks the boolean value whether the shape is selected or not?
+     * @param pastedCount - Keeps the track of the pasted count of the shapes
+     */
     public Shape(Point clickedPoint, Point leftPoint, ShapeType shapeType, ShapeShadingType shadingType, Color firstColor, Color secondColor,boolean selected, int pastedCount) {
         this.clickedPoint = clickedPoint;
         this.leftPoint = leftPoint;
@@ -69,6 +79,9 @@ public class Shape implements InterShape {
         return shadingType;
     }
 
+    /**
+     * @param g2D - Shape is drawn using by calling the method "ShapeDrawer" using Graphics2D
+     */
     @Override
     public void draw(Graphics2D g2D) {
         ShapeDrawer shapeDrawer = new ShapeDrawer(g2D);
@@ -99,6 +112,10 @@ public class Shape implements InterShape {
     public boolean getSelected() {
         return this.selected;
     }
+
+    /**
+     * @param shapeBorder - This is executed when the shape is selected and a border is created around the shape selected
+     */
     @Override
     public void selectShape(ShapeBorder shapeBorder) {
         Collision collision = new Collision(shapeBorder, this);
@@ -140,6 +157,11 @@ public class Shape implements InterShape {
     {
         this.pastedCount = pastedCount;
     }
+
+    /**
+     * @param locationX - Captures the new LocationX where the shape is being moved
+     * @param locationY - Captures the new LocationY where the shape is being moved
+     */
     public void shapeMoving(int locationX, int locationY){
         new MoveShape(clickedPoint, leftPoint, paintCanvas).run();
     }

@@ -13,6 +13,11 @@ public class SelectShape implements IEventCallback {
     private final PaintCanvas paintCanvas;
     private final ArrayList<InterShape> allList = AllShape.INTER_SHAPE_ARRAY_LIST.getInterShapes();
 
+    /**
+     * @param clickPoint - Captures the location where mouse is clicked
+     * @param leftPoint - captures the location where mouse is left
+     * @param PaintCanvas - selects the shape based on the clickPoint and leftPoint and highlights the shape with an outline
+     */
     public SelectShape(Point clickPoint, Point leftPoint, PaintCanvas PaintCanvas) {
         this.clickPoint = clickPoint;
         this.leftPoint = leftPoint;

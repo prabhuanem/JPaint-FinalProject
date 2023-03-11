@@ -1,12 +1,13 @@
 package view.gui;
 
-import javax.swing.*;
-
 import view.EventName;
 import view.interfaces.IDialogChoice;
 import view.interfaces.IEventCallback;
 import view.interfaces.IGuiWindow;
 import view.interfaces.IUiModule;
+
+import javax.swing.*;
+import java.awt.event.KeyListener;
 
 public class Gui implements IUiModule {
 
@@ -34,5 +35,13 @@ public class Gui implements IUiModule {
         return selectedValue == null
                 ? (T)dialogSettings.getCurrentSelection()
                 : (T)selectedValue;
+    }
+
+    public void addKeyListener(KeyListener listener) {
+        gui.addKeyListener(listener);
+    }
+
+    public void requestFocus() {
+        gui.requestFocus();
     }
 }

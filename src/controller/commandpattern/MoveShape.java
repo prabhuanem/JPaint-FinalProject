@@ -17,6 +17,11 @@ public class MoveShape implements IEventCallback, IUndoable {
     private final ArrayList<InterShape> shapeArrayList = AllShape.INTER_SHAPE_ARRAY_LIST.getInterShapes();
 
 
+    /**
+     * @param clickPoint - Point where the mouse is clicked/Pressed on the shape to move
+     * @param leftPoint - Point where the mouse is left/Released after moving the shape
+     * @param paintCanvas - Shape will be repainted after the shape is moved
+     */
     public MoveShape(Point clickPoint, Point leftPoint, PaintCanvas paintCanvas) {
         this.clickPoint = clickPoint;
         this.leftPoint = leftPoint;
@@ -51,6 +56,10 @@ public class MoveShape implements IEventCallback, IUndoable {
         paintCanvas.repaint();
     }
 
+    /**
+     * @param shape - X & Y locations are calculated for moving the shapes
+     * @return - Shape is returned after updating the location of the Shape
+     */
     private InterShape move(InterShape shape) {
         int movePointX = leftPoint.x - clickPoint.x;
         int movePointY = leftPoint.y - clickPoint.y;
@@ -59,6 +68,10 @@ public class MoveShape implements IEventCallback, IUndoable {
         return shape;
     }
 
+    /**
+     * @param shape - Undo of the moved shape is executed here. Original coordinates are updated for the shape
+     *              That's how the shape is restored back to original position(Last position before moving the shape)
+     */
     private void undoMove(InterShape shape) {
         int movePointX = leftPoint.x - clickPoint.x;
         int movePointY = leftPoint.y - clickPoint.y;

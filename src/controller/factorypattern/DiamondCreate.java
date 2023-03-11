@@ -9,10 +9,16 @@ import java.awt.geom.Path2D;
 public class DiamondCreate implements InterShapeCreate {
     private final InterShape drawing;
 
+    /**
+     * @param drawing - Drawing the Diamond shape
+     */
     public DiamondCreate(InterShape drawing) {
         this.drawing = drawing;
     }
 
+    /**
+     * @return - Using Path2D double to draw the diamond by calculating the dimensions and closing the path accordingly to create the shape
+     */
     @Override
     public Shape shapeDrawing() {
         Path2D.Double diamond = new Path2D.Double();

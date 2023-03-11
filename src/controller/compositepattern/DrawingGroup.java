@@ -14,9 +14,13 @@ public class DrawingGroup implements InterShape {
     private final ArrayList<InterShape> subShapesGroup = new ArrayList<>();
     private int X,Y,breadth, length,pastedCount;
     private boolean selected;
+
+    /**
+     * @param shapeArrayList - All the selected individual shapes are added in the Array List and overall dimensions will be calculated
+     */
     public DrawingGroup(ArrayList<InterShape> shapeArrayList){
-        for(InterShape drawing : shapeArrayList)
-        {
+        for (int i = 0; i < shapeArrayList.size(); i++) {
+            InterShape drawing = shapeArrayList.get(i);
             addSubShapes(drawing);
         }
         this.X = coordX();
@@ -29,9 +33,7 @@ public class DrawingGroup implements InterShape {
     public void addSubShapes(InterShape drawing)
     {
         if(!subShapesGroup.contains(drawing))
-        {
             subShapesGroup.add(drawing);
-        }
     }
 
     @Override
@@ -49,6 +51,9 @@ public class DrawingGroup implements InterShape {
         return subShapesGroup.stream().mapToInt(InterShape::coordY).min().orElse(0);
     }
 
+    /**
+     * @return - Returns the maximum breadth dimension of the Grouped Shapes
+     */
     @Override
     public int breadthDrawing() {
         int pointX = coordX();
@@ -58,6 +63,9 @@ public class DrawingGroup implements InterShape {
         }).max().orElse(0);
     }
 
+    /**
+     * @return - Returns the maximum length dimension of the Grouped Shapes
+     */
     @Override
     public int lengthDrawing() {
         int pointY = coordY();
@@ -87,8 +95,8 @@ public class DrawingGroup implements InterShape {
 
     @Override
     public Point leftPoint() {
-        for (InterShape interShape : subShapesGroup)
-        {
+        for (int i = 0; i < subShapesGroup.size(); i++) {
+            InterShape interShape = subShapesGroup.get(i);
             interShape.leftPoint();
         }
         return new Point(X+breadth, Y+length);
@@ -96,8 +104,8 @@ public class DrawingGroup implements InterShape {
 
     @Override
     public Point clickedPoint() {
-        for (InterShape interShape : subShapesGroup)
-        {
+        for (int i = 0; i < subShapesGroup.size(); i++) {
+            InterShape interShape = subShapesGroup.get(i);
             interShape.clickedPoint();
         }
         return new Point(X,Y);
@@ -113,13 +121,12 @@ public class DrawingGroup implements InterShape {
     public void selectShape(ShapeBorder shapeBorder) {
         Collision collision = new Collision(shapeBorder, this);
         this.setSelected(collision.run());
-
     }
 
     @Override
     public boolean getSelected() {
-        for (InterShape interShape : subShapesGroup)
-        {
+        for (int i = 0; i < subShapesGroup.size(); i++) {
+            InterShape interShape = subShapesGroup.get(i);
             interShape.getSelected();
         }
         return this.selected;
@@ -127,8 +134,8 @@ public class DrawingGroup implements InterShape {
 
     @Override
     public void setSelected(boolean selectedStatus) {
-        for (InterShape interShape : subShapesGroup)
-        {
+        for (int i = 0; i < subShapesGroup.size(); i++) {
+            InterShape interShape = subShapesGroup.get(i);
             interShape.setSelected(selectedStatus);
         }
         selected = selectedStatus;

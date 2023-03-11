@@ -13,6 +13,9 @@ public class EllipseCreate implements InterShapeCreate {
         this.drawing = drawing;
     }
 
+    /**
+     * @return - Returns the ellipse shape which is created using "Ellipse2D.Double" method
+     */
     @Override
     public Shape shapeDrawing() {
         Shape ellipse;

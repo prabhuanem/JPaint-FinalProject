@@ -12,6 +12,9 @@ public class TriangleCreate implements InterShapeCreate {
         this.drawing = drawing;
     }
 
+    /**
+     * @return - returns the triangle shape (Equilateral triangle)
+     */
     public Shape shapeDrawing()
     {
 

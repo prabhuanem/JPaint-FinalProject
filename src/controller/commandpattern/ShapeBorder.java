@@ -9,6 +9,12 @@ public class ShapeBorder implements IBorder {
     private final Point leftPoint;
     private int X, Y, breadth, length;
 
+    /**
+     * @param clickPoint - Reads the Mouse ClickPoint
+     * @param leftPoint - Reads the Mouse LeftPoint
+     *                  Based on these Points the shapes is selected.
+     *                  Once shape is selected the method "CoordinateXAndY" will calculate the X, Y, breadth and length to get the shape dimensions
+     */
     public ShapeBorder(Point clickPoint, Point leftPoint) {
         this.clickPoint = clickPoint;
         this.leftPoint = leftPoint;

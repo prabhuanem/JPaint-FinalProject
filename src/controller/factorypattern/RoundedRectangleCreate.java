@@ -13,6 +13,9 @@ public class RoundedRectangleCreate implements InterShapeCreate {
         this.drawing = drawing;
     }
 
+    /**
+     * @return - Returns the rounded rectangle shape which is created using "RoundRectangle2D.Double" method
+     */
     @Override
     public Shape shapeDrawing() {
         int x = drawing.coordX();

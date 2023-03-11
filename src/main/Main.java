@@ -13,6 +13,9 @@ import view.interfaces.IUiModule;
 import java.awt.*;
 
 public class Main {
+    /**
+     * @param args
+     */
     public static void main(String[] args){
         PaintCanvas paintCanvas = new PaintCanvas();
         IGuiWindow guiWindow = new GuiWindow(paintCanvas);
@@ -20,7 +23,7 @@ public class Main {
         ApplicationState appState = new ApplicationState(uiModule);
         IJPaintController controller = new JPaintController(uiModule, appState, paintCanvas, new Point(0,0));
         controller.setup();
-        MouseTracking mouseTracking = new MouseTracking(paintCanvas, appState);
+        MouseTracking mouseTracking = new MouseTracking(paintCanvas, appState,guiWindow);
         paintCanvas.addMouseListener(mouseTracking);
 
     }

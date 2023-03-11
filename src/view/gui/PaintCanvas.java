@@ -21,7 +21,6 @@ public class PaintCanvas extends PaintCanvasBase {
         repaint();
     }
 
-
     @Override
     public void paint(Graphics g) {
         super.paint(g);

@@ -13,6 +13,9 @@ public class RectangleCalloutCreate implements InterShapeCreate {
         this.drawing = drawing;
     }
 
+    /**
+     * @return - Using Path2D double to draw the Rectangle Callout by calculating the dimensions and closing the path accordingly to create the shape
+     */
     @Override
     public Shape shapeDrawing() {
         Path2D.Double cloudCallout = new Path2D.Double();
@@ -24,7 +27,7 @@ public class RectangleCalloutCreate implements InterShapeCreate {
 
         int arcRadius = 20;
 
-        // Draw cloud body
+        // Drawing cloud body
         cloudCallout.moveTo(x + arcRadius, y);
         cloudCallout.quadTo(x, y, x, y + arcRadius);
         cloudCallout.lineTo(x, y + height - arcRadius);
@@ -35,7 +38,7 @@ public class RectangleCalloutCreate implements InterShapeCreate {
         cloudCallout.quadTo(x + width, y, x + width - arcRadius, y);
         cloudCallout.closePath();
 
-        // Draw cloud callout
+        // Drawing cloud callout
         int calloutWidth = 40;
         int calloutHeight = 30;
         int calloutX = x + width / 2 - calloutWidth / 2;

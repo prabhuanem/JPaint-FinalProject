@@ -82,4 +82,8 @@ public class ApplicationState implements IApplicationState {
         activeShapeShadingType = ShapeShadingType.FILLED_IN;
         activeMouseMode = MouseMode.DRAW;
     }
+
+    public void setActiveShapeType(ShapeType shapeType) {
+        activeShapeType = shapeType;
+    }
 }
