@@ -66,9 +66,11 @@ Note : Will get this fixed in the upcoming sprint's
     2. Implemented Copy, Paste and Delete Functionalities
     3. Implemented Undo/Redo of Paste and Delete functionalities
 
-**Bugs (Sprint - 3)**
+**Sprint - 4**
 
-    1. When shapes created are overlapped and when selecting both the shapes are getting selected. Will try to fix it in next sprint
+**Features Implemented**
+
+    1. Implemented "Group" and "Ungroup" of the shapes functionality
 
 **Design Patterns**
 
@@ -79,3 +81,8 @@ Below are the design patterns implemented in this project
     3. Strategy Pattern
     4. Builder Pattern
     5. Decorator Pattern
+    6. Composite Pattern
+
+**<h1 style ="font-size:14 ; color:cyan">Extra Credits** </h1>
+
+**Features Implemented**

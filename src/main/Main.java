@@ -1,5 +1,7 @@
 package main;
 
+//Author - Mani Ratna Sai Prabhu Teja, Anem
+
 import controller.IJPaintController;
 import controller.JPaintController;
 import controller.MouseTracking;
@@ -13,9 +15,7 @@ import view.interfaces.IUiModule;
 import java.awt.*;
 
 public class Main {
-    /**
-     * @param args
-     */
+
     public static void main(String[] args){
         PaintCanvas paintCanvas = new PaintCanvas();
         IGuiWindow guiWindow = new GuiWindow(paintCanvas);
