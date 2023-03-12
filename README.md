@@ -24,9 +24,7 @@ Pick a shape
 - Ungroup selected shapes
 - Selected shapes have dashed outline
 
-**This project will be implemented in 4 sprints**
-
-Current Implementation is w.r.t Sprint - 1. Below is the overview of the current project as on Sprint - 1
+**This project is implemented in 4 sprints**
 
 **GitHub Repo**
 
@@ -75,6 +73,7 @@ Note : Will get this fixed in the upcoming sprint's
 **Design Patterns**
 
 Below are the design patterns implemented in this project
+Mentioned in detailed in the PDF here - https://github.com/prabhuanem/JPaint-FinalProject/blob/master/Design%20Pattern.pdf
 
     1. Factory Method Pattern
     2. Command Pattern
