@@ -169,4 +169,8 @@ public class Shape implements InterShape {
     public void undoingMovedShape(int locationX, int locationY){
         new MoveShape(clickedPoint, leftPoint,paintCanvas).undo();
     }
+
+    public Rectangle getBounds(){
+        return new Rectangle(X,Y,width,height);
+    }
 }

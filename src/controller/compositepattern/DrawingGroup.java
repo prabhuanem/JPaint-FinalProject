@@ -199,4 +199,8 @@ public class DrawingGroup implements InterShape {
     public ArrayList<InterShape> getSubShapesGroup(){
         return subShapesGroup;
     }
+
+    public Rectangle getBounds(){
+        return new Rectangle(X,Y,breadth,length);
+    }
 }

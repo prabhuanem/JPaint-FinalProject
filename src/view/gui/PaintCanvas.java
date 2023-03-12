@@ -7,9 +7,11 @@ import view.interfaces.PaintCanvasBase;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PaintCanvas extends PaintCanvasBase {
     private final Grid grid = new Grid(10);
+    private final List<InterShape> erasedShapes = new ArrayList<>();
 
     public Graphics2D getGraphics2D() {
         return (Graphics2D) getGraphics();
@@ -20,6 +22,12 @@ public class PaintCanvas extends PaintCanvasBase {
         grid.toggleVisibility();
         repaint();
     }
+
+    public void addShape(InterShape shape){
+        erasedShapes.add(shape);
+        repaint();
+    }
+
 
     @Override
     public void paint(Graphics g) {

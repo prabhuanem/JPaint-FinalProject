@@ -32,5 +32,6 @@ public interface InterShape {
 
     void shapeMoving(int locationX, int locationY);
     void undoingMovedShape(int locationX, int locationY);
+    Rectangle getBounds();
 
 }

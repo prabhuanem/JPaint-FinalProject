@@ -39,4 +39,5 @@ public enum EventName {
 	GROUP,
 	UNGROUP,
 	TOGGLE_GRID
+
 }

@@ -15,6 +15,12 @@ public class Grid {
         visible = !visible;
     }
 
+    /**
+     * @param g - Drawing the grid using Graphics
+     * @param canvasWidth - parameter storing the Canvas Width
+     * @param canvasHeight - parameter storing the Canvas length
+     *                     Draw the vertical and horizontal lines in the canvas
+     */
     public void draw(Graphics g, int canvasWidth, int canvasHeight) {
         if (visible) {
             g.setColor(Color.LIGHT_GRAY);

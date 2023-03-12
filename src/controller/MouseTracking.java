@@ -34,41 +34,22 @@ if(appState.getActiveMouseMode() == MouseMode.DRAW){
         /**
          * Invoked when a key has been pressed.
          *
-         * @param e
+         * @param e - Looking for Keypress event, based on the key pressed action will be done
          */
         @Override
         public void keyPressed(KeyEvent e) {
-            ShapeType shapeType =null;
-            switch (e.getKeyCode()){
-                case KeyEvent.VK_E:
-                    shapeType =ShapeType.ELLIPSE;
-                    break;
-                case KeyEvent.VK_R:
-                    shapeType = ShapeType.RECTANGLE;
-                    break;
-                case KeyEvent.VK_T:
-                    shapeType = ShapeType.TRIANGLE;
-                    break;
-                case KeyEvent.VK_S:
-                    shapeType = ShapeType.STAR;
-                    break;
-                case KeyEvent.VK_D:
-                    shapeType = ShapeType.DIAMOND;
-                    break;
-                case KeyEvent.VK_O:
-                    shapeType = ShapeType.OCTAGON;
-                    break;
-                case KeyEvent.VK_C:
-                    shapeType = ShapeType.ROUNDED_RECTANGLE;
-                    break;
-                case KeyEvent.VK_L:
-                    shapeType = ShapeType.RECTANGLE_CALLOUT;
-                    break;
-
-            }
-            if(shapeType!=null){
-                appState.setActiveShapeType(shapeType);
-            }
+            ShapeType shapeType = switch (e.getKeyCode()) {
+                case KeyEvent.VK_E -> ShapeType.ELLIPSE;
+                case KeyEvent.VK_R -> ShapeType.RECTANGLE;
+                case KeyEvent.VK_T -> ShapeType.TRIANGLE;
+                case KeyEvent.VK_S -> ShapeType.STAR;
+                case KeyEvent.VK_D -> ShapeType.DIAMOND;
+                case KeyEvent.VK_O -> ShapeType.OCTAGON;
+                case KeyEvent.VK_C -> ShapeType.ROUNDED_RECTANGLE;
+                case KeyEvent.VK_L -> ShapeType.RECTANGLE_CALLOUT;
+                default -> null;
+            };
+            if(shapeType!=null) appState.setActiveShapeType(shapeType);
         }
     };
     gui.addKeyListener(keyListener);
@@ -101,6 +82,10 @@ if(appState.getActiveMouseMode() == MouseMode.DRAW){
                         case MOVE -> {
                             MoveShape moveShape = new MoveShape(clickPoint, leftPoint, paintCanvas);
                             moveShape.run();
+                        }
+                        case ERASER -> {
+                            Eraser eraser = new Eraser(clickPoint, leftPoint, paintCanvas);
+                            eraser.run();
                         }
                     }
                 }
