@@ -83,6 +83,77 @@ Below are the design patterns implemented in this project
     5. Decorator Pattern
     6. Composite Pattern
 
-**<h1 style ="font-size:14 ; color:cyan">Extra Credits** </h1>
+**<h1 style ="font-size:14 ; color:cyan">Extra Credits</h1>**
 
-**Features Implemented**
+**New Additional Shapes**
+
+    1. Star
+    2. Diamond
+    3. Rounded Rectangle
+    4. Rectangle Callout
+    5. Octagon
+Note : All these new shapes have the same existing functionality which Ellipse, Rectangle and Triangle have
+
+**<h1 style ="color:cyan">Features Implemented</h1>**
+
+**<h3 style ="color:cyan">Grid Toggle</h3>**
+    
+    1. Created a new button (Event) which helps to display grids on the Paint Canvas
+    2. Using the Toggle_Grid user can toggle Grid Layout
+
+**Future Scope**
+
+    1. Free shape drawing can be done easliy using the grid layer
+    2. Shapes can be snapped to the grid for proper alignment
+
+**<h3 style ="color:cyan">Eraser Tool</h3>**
+
+    1. Added a Mouse Mode 'ERASER'
+    2. After drawing the shapes user can select the 'ERASER' from Mouse Mode to enable eraser mode
+    3. User need to click and drag the cursor. When the ERASER bounds intersect the shape which needs to be erased.
+    4. When the Eraser bounds and Shape intersects then the shape is erased
+
+**Current Functionality & Issue**
+
+    1. After erasing the shapes, when user clicks on UNDO, shape is not getting repainted
+    2. But when we click REDO then the shapes are gettig repainted again on the canvas
+    3. Here after Undo and Redo function works accordingly
+
+**Future Scope**
+
+    1. Shapes can be partially erased and the new shape can be displayed
+    2. This gives more freedom for the users to draw complex shapes
+
+**<h3 style ="color:cyan">KeyBoard Shortcuts (For ShapeType)</h3>**
+
+    1. Implemented keyboard short cuts to change the shapetype which allows user to draw different with just a press of a key
+
+**ShortCuts**
+
+-   ELLIPSE - 'Key : E'
+- RECTANGLE - 'Key : R'
+- TRIANGLE - 'Key : T'
+- STAR - 'Key : S'
+- DIAMOND - 'Key : D'
+- ROUNDED RECTANGLE - 'Key : C'
+- RECTANGLE CALLOUT - 'Key : L'
+- OCTAGON - 'Key : O'
+
+**Current Functionality**
+
+    1. In Draw mode user has to click on the Key as per the Shapetype required
+
+**Future Scope**
+
+    1.Shortcut keys can be implemented across the application for various functions which enhances the user experience
+
+**Bugs**
+
+    1. Moving the Grouped Shapes is working weirdly. Shapes are getting stacked
+
+Note : However when multiple individual shapes are selected together and moved it is working as intended. Observing this issue when those shapes are grouped
+
+    2. Similary to "Moving" the grouped shapes, When Pasting the Copied groupShape. all the subshapes in the group are getting stacked
+
+Note : When we select the "Shape/Shapes" and copy them we have to click on the screen on where the copied shapes need to be pasted
+        After clicking on the screen user have to press paste for shapes to be pasted there
