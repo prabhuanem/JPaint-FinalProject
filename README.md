@@ -93,7 +93,7 @@ Mentioned in detailed in the PDF here - https://github.com/prabhuanem/JPaint-Fin
     5. Octagon
 Note : All these new shapes have the same existing functionality which Ellipse, Rectangle and Triangle have
 
-**<h1 style ="color:cyan">Features Implemented</h1>**
+**<h2 style ="color:cyan">Features Implemented</h2>**
 
 **<h3 style ="color:cyan">Grid Toggle</h3>**
     
@@ -146,13 +146,32 @@ Note : All these new shapes have the same existing functionality which Ellipse, 
 
     1.Shortcut keys can be implemented across the application for various functions which enhances the user experience
 
-**Bugs**
+**<h2 style ="color:cyan">Bugs</h2>**
 
     1. Moving the Grouped Shapes is working weirdly. Shapes are getting stacked
 
 Note : However when multiple individual shapes are selected together and moved it is working as intended. Observing this issue when those shapes are grouped
 
-    2. Similary to "Moving" the grouped shapes, When Pasting the Copied groupShape. all the subshapes in the group are getting stacked
+    2. Similary to "Moving" the grouped shapes, When Pasting the Copied groupShape. Only the outer boundary of the GroupShape is visible in "Red", but the shapes inside the group are not getting displayed
 
 Note : When we select the "Shape/Shapes" and copy them we have to click on the screen on where the copied shapes need to be pasted
         After clicking on the screen user have to press paste for shapes to be pasted there
+
+**<h2>Efforts/Approaches tried to fix the issues</h2>**
+
+**For Moving GroupShape Issue**
+
+1. Tried calculating the relative positions between the shapes inside the group
+2. Tried to Ungroup momentarily while moving and Group back again after moving is done (Since when multiple individual shapes are selected and moved everything is working as intended)
+
+**For Pasting GroupShape Issue**
+
+1. Similar to the MoveShape Issue. While pasting the shape momentarily ungroup the shapes paste the individual shapes in the group first and group them again after successful pasting
+
+**<h1>Challenging Aspects of the Project</h1>**
+
+1. Implementing 5 different Design Patterns
+2. Choosing most suitable Patterns from the pool of design patterns for better control and efficiency
+3. Major challenge which I faced is while implementing "Group" and "Ungroup" these were tricky
+4. Moving all the sub shapes which are part of group while maintaining the relative positions between them is tricky
+
