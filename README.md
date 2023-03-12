@@ -54,8 +54,6 @@ Here is the Link to the README file (Mark Down) which is part of GitHub report -
     3. Select Functionality has been implemented
     4. Move functionality has been implemented along with Undo/Redo of Move has been implemented
 
-Note : Will get this fixed in the upcoming sprint's
-
 **Sprint - 3**
 
 **Features Implemented**
@@ -141,6 +139,7 @@ Note : All these new shapes have the same existing functionality which Ellipse, 
 **Current Functionality**
 
     1. In Draw mode user has to click on the Key as per the Shapetype required
+    2. Currently this is working when the application is run and in the default mode.
 
 **Future Scope**
 
@@ -152,7 +151,7 @@ Note : All these new shapes have the same existing functionality which Ellipse, 
 
 Note : However when multiple individual shapes are selected together and moved it is working as intended. Observing this issue when those shapes are grouped
 
-    2. Similary to "Moving" the grouped shapes, When Pasting the Copied groupShape. Only the outer boundary of the GroupShape is visible in "Red", but the shapes inside the group are not getting displayed
+    2. Similarly to "Moving" the grouped shapes, When Pasting the Copied groupShape. Only the outer boundary of the GroupShape is visible in "Red", but the shapes inside the group are not getting displayed
 
 Note : When we select the "Shape/Shapes" and copy them we have to click on the screen on where the copied shapes need to be pasted
         After clicking on the screen user have to press paste for shapes to be pasted there
